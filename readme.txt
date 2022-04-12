@@ -21,9 +21,6 @@ Supported with Latest WordPress. And new feature Added. Almost like pro features
 
 **Purchase Pro Version**
 
-* [Single Site License](https://account.ultraaddons.com/product/woocommerce-add-to-cart-text-change-and-button-customise/?attribute_pa_licences-type=single-site) For single Domain.
-* [5 Site License](https://account.ultraaddons.com/product/woocommerce-add-to-cart-text-change-and-button-customise/?attribute_pa_licences-type=5-sites) For 5 Domain. 
-* [Unlimited License](https://account.ultraaddons.com/product/woocommerce-add-to-cart-text-change-and-button-customise/?attribute_pa_licences-type=unlimited-sites) For Unlimited Domain.
 
 By this plugin, we can easily change default "Add to cart" text to our own language or by own word. No need any shortcode. No need programming skill. Just Install -> Activate and then change your text easily.
 = From: Dashboard -> WooCommerce -> ADD TO CART =
