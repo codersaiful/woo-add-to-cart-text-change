@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Plugin Name: Add to Cart Text Changer
  * Description: WooCommerce Product's [ Add to cart ] Button text change and easily set custom text by your own language. WooCommerce is one of the best Ecommerce plugin. Sometime can be need to change Add_to_cart Button text changing. Developed by <a href='https://codersaiful.net'>Saiful Islam</a>
@@ -24,6 +23,45 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	die( '-1' );
 }
+/**
+ * Fired during plugin activation.
+ *
+ * This class defines all code necessary to run during the plugin's activation.
+ *
+ * @since      1.8
+ * @package    WACTC
+ * @author     BM Rafiul Alam <bmrafiul.alam@gmail.com>
+ */
+if (!function_exists('activate_free')){
+    /**
+     * The code that runs during plugin activation.
+     * This action is documented in includes/class-activator.php
+     */
+    function activate_free(){
+        require_once plugin_dir_path(__FILE__) . 'includes/class-activator.php';
+        Free_Activator::activate();
+        Free_Activator::set_plugin_info();
+        set_transient('free_thankyou_notice', true, 5);
+    }
+}
+//Activation Hook
+register_activation_hook(__FILE__, 'activate_free');
+
+function free_thankyou_notice(){
+	if (get_transient('free_thankyou_notice')){
+		$msg_title 	= 'Add to Cart Text Changer';
+		$msg_text 	= 'Deactivated Add to Cart Text Changer Premium while Free is Activated.';
+		$settings 	= '<a class="button button-primary" href="'.wp_customize_url().'">Settings</a>';
+?>
+		<div class="updated is-dismissible aep-notice">
+			<?php echo sprintf(__('<p>Thank you for using <strong>%s</strong>! 
+			<strong>%s</strong></p><p>%s</p>', 'wactc' ),$msg_title, $msg_text, $settings); ?>
+		</div>
+  <?php
+		delete_transient('free_thankyou_notice');
+	}
+}
+//End Activation
 $wactc_default_args = array(
     'icon'      =>  'no_icon',//probale value: no_icon, only_icon, icon_left, icon_right
     'simple'    =>  __( 'Add to cart', 'wactc' ),
@@ -47,12 +85,12 @@ define( 'WACTC_TABLE_OPTIONS_PATH', WACTC_BASE_DIR . 'modules/options' . DIRECTO
 define( 'WACTC_TABLE_OPTIONS_URL', WACTC_BASE_URL . 'modules/options' );
 
 
-add_action('plugins_loaded','wactc_plugin_loaded');
+add_action('plugins_loaded','wactc_free_plugin_loaded');
 
-function wactc_plugin_loaded(){
+function wactc_free_plugin_loaded(){
     // Check if WooCommerce Activated
     if ( !is_plugin_active( 'woocommerce/woocommerce.php' ) ) {
-            add_action( 'admin_notices', 'wactc_admin_notice_missing_wc' );
+            add_action( 'admin_notices', 'wactc_free_admin_notice_missing_wc' );
             return;
     }
 
@@ -79,7 +117,7 @@ function wactc_plugin_loaded(){
  *
  * @access public
  */
-function wactc_admin_notice_missing_wc() {
+function wactc_free_admin_notice_missing_wc() {
 
        if ( isset( $_GET['activate'] ) ) unset( $_GET['activate'] );
 
@@ -100,7 +138,7 @@ function wactc_admin_notice_missing_wc() {
  * @package WooCommerce add to cart Text change
  * @since v1.0
  */
-function wactc_install(){
+function wactc_free_install(){
     global $wactc_default_args;
     
     $current = get_option( 'wactc_default_add_to_cart_text' );
@@ -120,8 +158,8 @@ function wactc_install(){
  * @package WooCommerce add to cart Text change
  * @since v1.0
  */
-function wactc_uninstall(){
+function wactc_free_uninstall(){
     //Nothing to do.
 }   
-register_activation_hook(__FILE__, 'wactc_install');
-register_deactivation_hook(__FILE__, 'wactc_uninstall');
+register_activation_hook(__FILE__, 'wactc_free_install');
+register_deactivation_hook(__FILE__, 'wactc_free_uninstall');
