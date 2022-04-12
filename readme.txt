@@ -20,6 +20,7 @@ Supported with Latest WordPress. And new feature Added. Almost like pro features
 * [Add to cart on Shop Page](https://account.ultraaddons.com/all-products/) Icon image added. background color changed of button etc.
 
 **Purchase Pro Version**
+[Go to Premium] (https://codeastrology.com/downloads/add-to-cart-text-changer-and-customise-button-premium/)
 
 
 By this plugin, we can easily change default "Add to cart" text to our own language or by own word. No need any shortcode. No need programming skill. Just Install -> Activate and then change your text easily.
