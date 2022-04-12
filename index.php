@@ -40,27 +40,12 @@ if (!function_exists('activate_free')){
     function activate_free(){
         require_once plugin_dir_path(__FILE__) . 'includes/class-activator.php';
         Free_Activator::activate();
-        Free_Activator::set_plugin_info();
-        set_transient('free_thankyou_notice', true, 5);
     }
 }
 //Activation Hook
 register_activation_hook(__FILE__, 'activate_free');
 
-function free_thankyou_notice(){
-	if (get_transient('free_thankyou_notice')){
-		$msg_title 	= 'Add to Cart Text Changer';
-		$msg_text 	= 'Deactivated Add to Cart Text Changer Premium while Free is Activated.';
-		$settings 	= '<a class="button button-primary" href="'.wp_customize_url().'">Settings</a>';
-?>
-		<div class="updated is-dismissible aep-notice">
-			<?php echo sprintf(__('<p>Thank you for using <strong>%s</strong>! 
-			<strong>%s</strong></p><p>%s</p>', 'wactc' ),$msg_title, $msg_text, $settings); ?>
-		</div>
-  <?php
-		delete_transient('free_thankyou_notice');
-	}
-}
+
 //End Activation
 $wactc_default_args = array(
     'icon'      =>  'no_icon',//probale value: no_icon, only_icon, icon_left, icon_right
