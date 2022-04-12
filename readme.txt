@@ -3,7 +3,7 @@ Contributors: codersaiful
 Donate link: https://account.ultraaddons.com/product/woocommerce-add-to-cart-text-change-and-button-customise/?attribute_pa_licences-type=5-sites
 Tags: woocommerce add to cart, add to cart, woocommerce plugin, add to cart text change, single product cart button, add to cart button
 Requires at least: 4.0
-Tested up to: 5.8
+Tested up to: 5.9.3
 Requires PHP: 5.6
 Stable tag: 1.8
 License: GPLv2 or later
