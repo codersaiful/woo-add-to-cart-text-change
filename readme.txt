@@ -1,11 +1,11 @@
 === Add to Cart Text Changer and Customize Button, Add Custom Icon ===
 Contributors: codersaiful
-Donate link: https://account.ultraaddons.com/product/woocommerce-add-to-cart-text-change-and-button-customise/?attribute_pa_licences-type=5-sites
+Donate link: https://codeastrology.com/pricing-add-to-cart-button-changer/
 Tags: woocommerce add to cart, add to cart, woocommerce plugin, add to cart text change, single product cart button, add to cart button
 Requires at least: 4.0
 Tested up to: 5.9.3
 Requires PHP: 5.6
-Stable tag: 1.8
+Stable tag: 1.9
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
