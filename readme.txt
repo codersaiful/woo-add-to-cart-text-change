@@ -1,11 +1,11 @@
 === Add to Cart Text Changer and Customize Button, Add Custom Icon ===
 Contributors: codersaiful
-Donate link: https://account.ultraaddons.com/product/woocommerce-add-to-cart-text-change-and-button-customise/?attribute_pa_licences-type=5-sites
+Donate link: https://codeastrology.com/pricing-add-to-cart-button-changer/
 Tags: woocommerce add to cart, add to cart, woocommerce plugin, add to cart text change, single product cart button, add to cart button
 Requires at least: 4.0
-Tested up to: 5.8
+Tested up to: 5.9.3
 Requires PHP: 5.6
-Stable tag: 1.8
+Stable tag: 1.9
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -20,10 +20,8 @@ Supported with Latest WordPress. And new feature Added. Almost like pro features
 * [Add to cart on Shop Page](https://account.ultraaddons.com/all-products/) Icon image added. background color changed of button etc.
 
 **Purchase Pro Version**
+[Go to Premium] (https://codeastrology.com/pricing-add-to-cart-button-changer/)
 
-* [Single Site License](https://account.ultraaddons.com/product/woocommerce-add-to-cart-text-change-and-button-customise/?attribute_pa_licences-type=single-site) For single Domain.
-* [5 Site License](https://account.ultraaddons.com/product/woocommerce-add-to-cart-text-change-and-button-customise/?attribute_pa_licences-type=5-sites) For 5 Domain. 
-* [Unlimited License](https://account.ultraaddons.com/product/woocommerce-add-to-cart-text-change-and-button-customise/?attribute_pa_licences-type=unlimited-sites) For Unlimited Domain.
 
 By this plugin, we can easily change default "Add to cart" text to our own language or by own word. No need any shortcode. No need programming skill. Just Install -> Activate and then change your text easily.
 = From: Dashboard -> WooCommerce -> ADD TO CART =
