@@ -8,9 +8,9 @@
  * Author URI: https://profiles.wordpress.org/codersaiful
  * 
  * Requires at least:    4.0.0
- * Tested up to:         5.9.2
+ * Tested up to:         6.2.2
  * WC requires at least: 3.0.0
- * WC tested up to: 	 5.6.3
+ * WC tested up to: 	 7.7.2
  * 
  * Text Domain: wactc
  * Domain Path: /languages/
