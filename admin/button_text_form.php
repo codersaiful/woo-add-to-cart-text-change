@@ -13,17 +13,37 @@ function wactc_text_form() {
     $message = '';
     if( isset($_POST['reset']) ){
         $message = "<h2 class='message_reset'>" . esc_html__( 'Reset Successfully', 'wactc' ) . "</h2>";
-        update_option( 'wactc_default_add_to_cart_text', $wactc_default_args );
-    }elseif( isset($_POST['submit']) && isset($_POST['data']) && is_array( $_POST['data'] )){
+
+        $sanitized_default_args = [];
+        //Sanitized $wactc_default_args
+        if( is_array( $wactc_default_args ) ){
+            foreach( $wactc_default_args as $key => $value ){
+
+                $sanitized_default_args[$key] = sanitize_text_field( $value );
+            }
+        }
+
+        //Sanitized whole array using sanitized_text_field()
+        update_option( 'wactc_default_add_to_cart_text', $sanitized_default_args );
+    }elseif( isset($_POST['submit']) && isset($_POST['data']) && is_array( $_POST['data'] )){ 
         $message = "<h2 class='message_successs'>" . esc_html__( 'Data Updated Successfully', 'wactc' ) . "</h2>";
         $data = isset( $_POST['data'] ) ? $_POST['data'] : $wactc_default_args;
         
         $final_data = array();
-        $final_data['simple'] = sanitize_text_field( $data['simple'] );
-        $final_data['icon'] = sanitize_text_field( $data['icon'] );
-        $final_data['variable'] = sanitize_text_field( $data['variable'] );
-        $final_data['grouped'] = sanitize_text_field( $data['grouped'] );
-        update_option( 'wactc_default_add_to_cart_text', $final_data );
+        $final_data['simple'] = sanitize_text_field( $data['simple'] ?? '' );
+        $final_data['icon'] = sanitize_text_field( $data['icon']  ?? '' );
+        $final_data['variable'] = sanitize_text_field( $data['variable']  ?? '' );
+        $final_data['grouped'] = sanitize_text_field( $data['grouped']  ?? '' );
+
+        $sanitized_final_data = [];
+        //Sanitized $final_data
+        if( is_array( $final_data ) ){
+            foreach( $final_data as $key => $value ){
+
+                $sanitized_final_data[$key] = sanitize_text_field( $value );
+            }
+        }
+        update_option( 'wactc_default_add_to_cart_text', $sanitized_final_data );
     }
     $saved_data = get_option('wactc_default_add_to_cart_text');
 
@@ -38,7 +58,7 @@ function wactc_text_form() {
                     <tr>
                         <th><?php echo esc_html__( 'For Single Product Page', 'wactc' ); ?></th>
                         <td>
-                            <input name="data[simple]" value="<?php echo esc_attr( $saved_data['simple'] ); ?>"  type="text">
+                            <input name="data[simple]" value="<?php echo esc_attr( sanitize_text_field( $saved_data['simple'] ?? '' ) ); ?>"  type="text">
                         </td>
                     </tr>
                     
@@ -46,10 +66,10 @@ function wactc_text_form() {
                         <th><?php echo esc_html__( 'Icon Setting', 'wactc' ); ?></th>
                         <td>
                             <select  name="data[icon]">
-                                <option value="no_icon" <?php echo $saved_data['icon'] == 'no_icon' ? esc_attr( 'selected' ) : false; ?>><?php echo esc_html__( 'No Icon', 'wactc' ); ?></option>
-                                <option value="only_icon" <?php echo $saved_data['icon'] == 'only_icon' ? esc_attr( 'selected' ) : false; ?>><?php echo esc_html__( 'Only Icon', 'wactc' ); ?></option>
-                                <option value="icon_left" <?php echo $saved_data['icon'] == 'icon_left' ? esc_attr( 'selected' ) : false; ?>><?php echo esc_html__( 'Icon at Left', 'wactc' ); ?></option>
-                                <option value="icon_right" <?php echo $saved_data['icon'] == 'icon_right' ? esc_attr( 'selected' ) : false; ?>><?php echo esc_html__( 'Icon at Right', 'wactc' ); ?></option>
+                                <option value="no_icon" <?php echo $saved_data['icon'] == 'no_icon' ? esc_attr( 'selected' ) : ''; ?>><?php echo esc_html__( 'No Icon', 'wactc' ); ?></option>
+                                <option value="only_icon" <?php echo $saved_data['icon'] == 'only_icon' ? esc_attr( 'selected' ) : ''; ?>><?php echo esc_html__( 'Only Icon', 'wactc' ); ?></option>
+                                <option value="icon_left" <?php echo $saved_data['icon'] == 'icon_left' ? esc_attr( 'selected' ) : ''; ?>><?php echo esc_html__( 'Icon at Left', 'wactc' ); ?></option>
+                                <option value="icon_right" <?php echo $saved_data['icon'] == 'icon_right' ? esc_attr( 'selected' ) : ''; ?>><?php echo esc_html__( 'Icon at Right', 'wactc' ); ?></option>
                             </select>
                         </td>
                     </tr>
@@ -63,7 +83,7 @@ function wactc_text_form() {
                     <tr>
                         <th><?php echo esc_html__( 'Grouped Product  [In Loop/ShopPage]', 'wactc' ); ?></th>
                         <td>
-                            <input name="data[grouped]" value="<?php echo esc_attr( $saved_data['grouped'] ); ?>"  type="text">
+                            <input name="data[grouped]" value="<?php echo esc_attr( sanitize_text_field( $saved_data['grouped'] ?? '' ) ); ?>"  type="text">
                         </td>
                     </tr>
                 </table>

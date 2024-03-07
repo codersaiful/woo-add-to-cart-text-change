@@ -4,7 +4,7 @@
  * Description: WooCommerce Product's [ Add to cart ] Button text change and easily set custom text by your own language. WooCommerce is one of the best Ecommerce plugin. Sometime can be need to change Add_to_cart Button text changing. Developed by <a href='https://codersaiful.net'>Saiful Islam</a>
  * Plugin URI: https://codeastrology.com/pricing-add-to-cart-button-changer/
  * Author: Saiful Islam
- * Version: 2.0
+ * Version: 2.1
  * Author URI: https://profiles.wordpress.org/codersaiful
  * 
  * Requires at least:    4.0.0
@@ -79,6 +79,14 @@ function wactc_free_plugin_loaded(){
             return;
     }
 
+    // Declare compatibility with custom order tables for WooCommerce.
+    add_action( 'before_woocommerce_init', function(){
+        if ( class_exists('\Automattic\WooCommerce\Utilities\FeaturesUtil') ) {
+                \Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility('custom_order_tables', __FILE__, true);
+            }
+        }
+    );
+
     if( is_admin() ){
         include( WACTC_BASE_DIR . 'admin/plugin_setting_link.php' ); //To show Setting link at plugin page
         
@@ -103,8 +111,6 @@ function wactc_free_plugin_loaded(){
  * @access public
  */
 function wactc_free_admin_notice_missing_wc() {
-
-       if ( isset( $_GET['activate'] ) ) unset( $_GET['activate'] );
 
        $message = sprintf(
                
@@ -133,7 +139,16 @@ function wactc_free_install(){
     }else{
         $wactc_default_args = $current;
     }
-    update_option( 'wactc_default_add_to_cart_text', $wactc_default_args );
+
+    $sanitized_default_args = [];
+    //Sanitized $wactc_default_args
+    if( is_array( $wactc_default_args ) ){
+        foreach( $wactc_default_args as $key => $value ){
+
+            $sanitized_default_args[$key] = sanitize_text_field( $value );
+        }
+    }
+    update_option( 'wactc_default_add_to_cart_text', $sanitized_default_args );
 }
 
 /**
