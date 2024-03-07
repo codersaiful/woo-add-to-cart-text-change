@@ -3,7 +3,7 @@ Contributors: codersaiful
 Donate link: https://codeastrology.com/pricing-add-to-cart-button-changer/
 Tags: woocommerce add to cart, add to cart, woocommerce plugin, add to cart text change, single product cart button
 Requires at least: 4.0
-Tested up to: 6.4.2
+Tested up to: 6.4.3
 Requires PHP: 6.4
 Stable tag: 2.1
 License: GPLv2 or later
