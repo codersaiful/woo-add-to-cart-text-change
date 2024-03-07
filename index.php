@@ -4,11 +4,11 @@
  * Description: WooCommerce Product's [ Add to cart ] Button text change and easily set custom text by your own language. WooCommerce is one of the best Ecommerce plugin. Sometime can be need to change Add_to_cart Button text changing. Developed by <a href='https://codersaiful.net'>Saiful Islam</a>
  * Plugin URI: https://codeastrology.com/pricing-add-to-cart-button-changer/
  * Author: Saiful Islam
- * Version: 1.9
+ * Version: 2.0
  * Author URI: https://profiles.wordpress.org/codersaiful
  * 
  * Requires at least:    4.0.0
- * Tested up to:         6.2.2
+ * Tested up to:         6.4.2
  * WC requires at least: 3.0.0
  * WC tested up to: 	 7.7.2
  * 
