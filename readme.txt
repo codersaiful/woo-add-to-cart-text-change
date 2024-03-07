@@ -9,7 +9,7 @@ Stable tag: 2.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Easy handle: Add to Cart Text Changer and Customize Button, Add Custom Icon. With icon of shop or cart. Almost like pro features. Now can handle all type of product and for all type page. Like Shop page, Archive page, Single Page etc. Easily change Add_to_Cart Button Text. Sometime we need to change WooComerce product's Default 'Add To Cart' button text. This plugin will help you to put any custom text for Add_to_Cart button.
+Easy handle: Add to Cart Text Changer and Customize Button, Add Custom Icon. With icon of shop or cart.
 
 == Description ==
 Supported with Latest WordPress. And new feature Added. Almost like pro features. Now can handle all type of product and for all type page. Like Shop page, Archive page, Single Page etc. 
