@@ -18,7 +18,7 @@ class Free_Activator {
 		deactivate_plugins( 'woo-add-to-cart-text-change-premium/init-pro.php' );
 	}
 	public static function set_plugin_info(){
-		update_option( 'wactc_activation_date', current_time( 'timestamp' ) );
-		update_option( 'wactc_version', '1.8' );
+		update_option( 'wactc_activation_date', sanitize_text_field( current_time( 'timestamp' ) ) );
+		update_option( 'wactc_version', sanitize_text_field( '1.8' ) );
 	}
 }

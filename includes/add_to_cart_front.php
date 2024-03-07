@@ -111,7 +111,6 @@ function wactc_customized_style_in_head(){
         background: url('<?php echo esc_url( $url ); ?>') no-repeat;
         background-size: <?php echo esc_attr( $width ); ?>px <?php echo esc_attr( $height ); ?>px;
         margin-right: 7px;
-        float: left;
     }
     </style>    
     <?php
