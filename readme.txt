@@ -1,7 +1,7 @@
 === Add to Cart Text Changer and Customize Button, Add Custom Icon ===
 Contributors: codersaiful
 Donate link: https://codeastrology.com/pricing-add-to-cart-button-changer/
-Tags: woocommerce add to cart, add to cart, woocommerce plugin, add to cart text change, single product cart button, add to cart button
+Tags: woocommerce add to cart, add to cart, woocommerce plugin, add to cart text change, single product cart button
 Requires at least: 4.0
 Tested up to: 6.4.2
 Requires PHP: 6.4
@@ -13,11 +13,6 @@ Easy handle: Add to Cart Text Changer and Customize Button, Add Custom Icon. Wit
 
 == Description ==
 Supported with Latest WordPress. And new feature Added. Almost like pro features. Now can handle all type of product and for all type page. Like Shop page, Archive page, Single Page etc. 
-
-**Demo**
-
-* [Add to cart on Single Product](https://account.ultraaddons.com/product/woocommerce-add-to-cart-text-change-and-button-customise/) Icon image added. background color changed of button etc.
-* [Add to cart on Shop Page](https://account.ultraaddons.com/all-products/) Icon image added. background color changed of button etc.
 
 **Purchase Pro Version**
 
@@ -84,6 +79,12 @@ Yes, it will it work Shop/Archive/Tag page.
 `/assets/screenshot-9.png`
 
 == Changelog ==
+
+= 1.9 to 2.1 =
+* Nonce added 
+* Sanitized all data
+* Bug fixed
+
 = 1.8 =
 * Escaping issue fixed
 * Codestar framework updated to latest version

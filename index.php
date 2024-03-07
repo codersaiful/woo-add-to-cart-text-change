@@ -10,7 +10,7 @@
  * Requires at least:    4.0.0
  * Tested up to:         6.4.2
  * WC requires at least: 3.0.0
- * WC tested up to: 	 7.7.2
+ * WC tested up to: 	 8.6.1
  * 
  * Text Domain: wactc
  * Domain Path: /languages/
